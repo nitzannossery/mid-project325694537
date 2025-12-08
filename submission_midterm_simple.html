@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Timeline Retrieval System - Submission</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 0;
+            color: #000;
+            font-size: 11pt;
+        }
+        h1 {
+            font-size: 18pt;
+            text-align: center;
+            margin-bottom: 5pt;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 14pt;
+            text-align: center;
+            margin-bottom: 15pt;
+            font-weight: normal;
+            color: #333;
+        }
+        .student-info {
+            text-align: center;
+            font-size: 11pt;
+            margin-bottom: 20pt;
+        }
+        .date {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 25pt;
+            color: #666;
+        }
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 15pt;
+            margin-bottom: 8pt;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 10pt;
+            font-size: 11pt;
+        }
+        ul {
+            margin-bottom: 10pt;
+            padding-left: 20pt;
+        }
+        li {
+            margin-bottom: 5pt;
+            font-size: 11pt;
+        }
+        .results {
+            margin-top: 15pt;
+            margin-bottom: 15pt;
+        }
+        .checkmark {
+            color: #00AA00;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 25pt;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insurance Claim Timeline Retrieval System</h1>
+    <h2>GenAI Multi-Agent Systems — Midterm</h2>
+    
+    <div class="student-info">
+        <strong>Student:</strong> Nitzan Nossery
+    </div>
+    
+    <div class="date">
+        Date: December 2025
+    </div>
+
+    <h3>System Overview</h3>
+    <p>This project implements a multi-agent GenAI system for querying an insurance claim timeline. A ManagerAgent routes user queries to a SummarizationAgent for high-level timeline questions, or to a NeedleAgent for precise factual retrieval. The system uses hierarchical RAG indexing with an Auto-Merging Retriever over a synthetic, time-stamped claim dataset, and integrates MCP-style tools for date differences and rental cost computation.</p>
+
+    <h3>Evaluation Results</h3>
+    <p><strong>Achieved Full Score Across All Quality Metrics</strong></p>
+    <ul>
+        <li>Correctness: 5.0 / 5.0</li>
+        <li>Relevancy: 5.0 / 5.0</li>
+        <li>Recall: 5.0 / 5.0</li>
+    </ul>
+    <p class="checkmark">✔ All 8 evaluation queries scored 5/5 across all metrics.</p>
+
+    <h3>MCP Usage</h3>
+    <p>MCP-style tools are used to extend the LLM beyond pure text reasoning by delegating precise, auditable computations (date differences and rental cost calculations) to explicit tools, while the agents focus on retrieval, routing, and explanation.</p>
+
+    <div class="footer">
+        Submission Document — Midterm Assignment
+    </div>
+</body>
+</html>
