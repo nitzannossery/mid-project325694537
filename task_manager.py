@@ -72,7 +72,9 @@ class TaskManager:
     
     def add_task(self, title: str, description: str = "") -> Task:
         """Add a new task"""
-        task = Task(self.next_id, title, description)
+        if not title or not title.strip():
+            raise ValueError("Task title cannot be empty")
+        task = Task(self.next_id, title.strip(), description.strip())
         self.tasks.append(task)
         self.next_id += 1
         self.save_tasks()
@@ -153,9 +155,15 @@ def main():
         
         if choice == "1":
             title = input("Enter task title: ").strip()
+            if not title:
+                print("Error: Task title cannot be empty.")
+                continue
             description = input("Enter task description (optional): ").strip()
-            task = manager.add_task(title, description)
-            print(f"✓ Task added: {task}")
+            try:
+                task = manager.add_task(title, description)
+                print(f"✓ Task added: {task}")
+            except ValueError as e:
+                print(f"Error: {e}")
         
         elif choice == "2":
             show_all = input("Show completed tasks? (y/n): ").strip().lower() == 'y'

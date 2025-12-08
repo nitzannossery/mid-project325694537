@@ -60,6 +60,19 @@ class TestTaskManager(unittest.TestCase):
         self.assertEqual(task.title, "Test Task")
         self.assertEqual(len(self.manager.tasks), 1)
     
+    def test_add_task_with_empty_title(self):
+        """Test adding a task with empty title raises ValueError"""
+        with self.assertRaises(ValueError):
+            self.manager.add_task("")
+        with self.assertRaises(ValueError):
+            self.manager.add_task("   ")
+    
+    def test_add_task_strips_whitespace(self):
+        """Test that task title and description are stripped of whitespace"""
+        task = self.manager.add_task("  Test Task  ", "  Description  ")
+        self.assertEqual(task.title, "Test Task")
+        self.assertEqual(task.description, "Description")
+    
     def test_get_task(self):
         """Test getting a task by ID"""
         task = self.manager.add_task("Test Task")
