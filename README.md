@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Insurance Claim Timeline Retrieval System (GenAI + Agents + MCP)
 
 Author: NITZAN NOSSERY
