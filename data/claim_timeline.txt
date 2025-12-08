@@ -1,0 +1,118 @@
+Claim ID: CLM-2024-0193
+Policy Holder: David Levi
+Vehicle: Toyota Corolla 2018
+Policy Type: Comprehensive Auto Insurance
+Location: Tel Aviv, Israel
+
+================================================================================
+P0 – Policy Renewal & Context
+================================================================================
+
+2024-01-04 10:00:00: Policy renewed for 12 months. Policy holder has been with the company for 8 years with continuous coverage and no at-fault accidents. Standard collision deductible: 1,500 ILS.
+
+================================================================================
+P1 – FNOL (First Notice of Loss)
+================================================================================
+
+2024-03-11 14:10:00: Minor accident reported near Tel Aviv intersection. Rear bumper damage observed. Policy holder called via mobile app to report the incident.
+
+2024-03-11 14:12:00: Call center agent received the report. Initial assessment: rear-end collision, no other vehicles involved, single-party claim.
+
+2024-03-11 14:14:00: Preliminary claim created in core system. Claim status set to SUBMITTED. Claim ID: CLM-2024-0193 assigned.
+
+2024-03-11 14:15:00: Driver mentioned mild neck discomfort but explicitly declined medical assistance. Driver stated: "I feel fine, no need for medical attention." Adjuster logged: "No bodily injury claim to be opened per policy holder request."
+
+2024-03-12 09:00:00: Initial claim filed via mobile app. All required documentation uploaded: photos of damage, police report (if applicable), driver statement.
+
+================================================================================
+P2 – Garage Inspection & Technical Diagnostics
+================================================================================
+
+2024-03-15 10:00:00: Garage inspection scheduled at "AutoFix Center" in Tel Aviv.
+
+2024-03-15 11:30:00: Vehicle inspected by garage technician. Initial assessment: rear bumper damage visible, estimated repair cost: 5,500 ILS.
+
+2024-03-17 14:00:00: Adjuster notes hidden damage to rear sensors discovered during detailed inspection. Additional repair work required for sensor calibration and replacement.
+
+2024-03-20 16:00:00: Preliminary approval: 7,800 ILS total repair cost (includes bumper replacement, sensor repair, paint work, and labor).
+
+================================================================================
+P3 – Special Deductible Override (Loyalty Benefit)
+================================================================================
+
+2024-03-21 09:30:00: Special note logged by senior adjuster: Deductible temporarily reduced to 850 ILS for this claim only. Standard deductible is 1,500 ILS. This override is applied as a loyalty retention benefit because the policy holder has long-term continuous coverage (8 years) with no at-fault accidents. The override is explicitly limited to this single claim only and is not applied to future claims or the policy as a whole.
+
+2024-03-21 09:35:00: Deductible override approved by claims manager. System updated: CLM-2024-0193 deductible set to 850 ILS (override code: LOYALTY-RETENTION-2024).
+
+================================================================================
+P4 – Rental Car Coverage & Cost Computation
+================================================================================
+
+2024-03-25 10:00:00: Policyholder requests rental car coverage during repair period.
+
+2024-03-26 11:00:00: Rental car coverage approved for 5 days with a daily limit of 200 ILS per day for a compact class vehicle. Maximum coverage: 1,000 ILS (5 days × 200 ILS/day).
+
+2024-03-26 11:15:00: Rental car provider contacted: "CarRent Tel Aviv". Vehicle assigned: Compact class, pickup scheduled for repair start date.
+
+================================================================================
+P5 – Final Invoice, Metadata Inconsistency, Payout, and Closure
+================================================================================
+
+2024-04-02 15:00:00: Final invoice uploaded by garage: 7,650 ILS. Invoice number in document header: INV-7645.
+
+2024-04-02 15:05:00: System metadata shows invoice ID as INV-7645A (note the 'A' suffix). System auto-normalizes this inconsistency without financial impact. Both references point to the same invoice document.
+
+2024-04-02 15:30:00: Final payout calculation:
+  - Repair invoice: 7,650 ILS
+  - Reduced deductible: 850 ILS
+  - Total payout: 6,800 ILS (7,650 - 850)
+
+2024-04-04 17:00:00: Claim closed. Total payout: 6,800 ILS transferred to policy holder account. Claim status: CLOSED. Closure reason: Repairs completed, payment processed.
+
+================================================================================
+P6 – Post-Closure Analytics, Audit, and Retention Tagging
+================================================================================
+
+2024-04-05 09:00:00: Post-closure audit completed. All documentation verified. Deductible override justified and approved.
+
+2024-04-05 10:00:00: Retention tag applied: "LOYALTY-CUSTOMER-8YRS". Policy holder satisfaction survey sent.
+
+2024-04-05 14:00:00: Analytics note: Claim processing time: 24 days from accident (2024-03-11) to closure (2024-04-04). Average processing time for similar claims: 18-22 days. This claim took slightly longer due to hidden sensor damage discovery and deductible override approval process.
+
+================================================================================
+Summary of Key Details (Needle Information)
+================================================================================
+
+1. Special Deductible Override:
+   - Standard: 1,500 ILS
+   - Applied: 850 ILS
+   - Reason: Loyalty retention benefit (8 years continuous coverage, no at-fault accidents)
+   - Scope: This claim only, not applied to future claims
+
+2. Bodily Injury Status:
+   - Driver reported mild neck discomfort
+   - Explicitly declined medical assistance
+   - No separate bodily injury claim opened
+   - Adjuster logged: "No bodily injury claim to be opened per policy holder request"
+
+3. Invoice ID Inconsistency:
+   - Document header: INV-7645
+   - System metadata: INV-7645A
+   - System auto-normalizes without financial impact
+
+4. Rental Coverage:
+   - Approved: 5 days
+   - Daily limit: 200 ILS/day
+   - Vehicle class: Compact
+   - Maximum coverage: 1,000 ILS
+
+5. Final Payout Calculation:
+   - Invoice: 7,650 ILS
+   - Deductible: 850 ILS (reduced)
+   - Payout: 6,800 ILS
+
+6. Timeline:
+   - Accident: 2024-03-11 14:10:00
+   - Claim created: 2024-03-11 14:14:00
+   - Closure: 2024-04-04 17:00:00
+   - Duration: 24 days

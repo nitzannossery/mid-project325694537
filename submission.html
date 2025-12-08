@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claim Timeline Retrieval System - Submission</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .author {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+        ul {
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insurance Claim Timeline Retrieval System (GenAI + Agents + MCP)</h1>
+    <div class="author">Author: Nitzan Nossery</div>
+
+    <div class="section">
+        <h2>System Overview</h2>
+        <p>This project implements a production-style GenAI retrieval system for an auto insurance claim. The system ingests a multi-page, second-by-second claim timeline and exposes a multi-agent interface:</p>
+        <ul>
+            <li>A <strong>ManagerAgent</strong> routes each user query.</li>
+            <li>A <strong>SummarizationAgent</strong> answers high-level, timeline-oriented questions using a SummaryIndex.</li>
+            <li>A <strong>NeedleAgent</strong> answers precise factual questions using a hierarchical RAG index with an AutoMergingRetriever.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Data & Indexing</h2>
+        <p>The claim is represented as a chronological event log (seconds/minutes resolution) across multiple phases: policy renewal, FNOL, garage inspection, deductible override, rental coverage, invoice and payout, and post-closure analytics. The indexing layer uses hierarchical chunking (small / medium / large) to support both needle retrieval and broader contextual reasoning. A separate SummaryIndex enables fast high-level answers without scanning the full context every time.</p>
+    </div>
+
+    <div class="section">
+        <h2>Agent Architecture & MCP Integration</h2>
+        <p>The ManagerAgent classifies queries as summary vs. needle and routes them to the appropriate agent. The NeedleAgent can optionally call MCP-style tools:</p>
+        <ul>
+            <li>A <strong>DateDiff</strong> tool to compute durations between key events (e.g., accident to closure).</li>
+            <li>A <strong>RentalCost</strong> tool to compute rental car cost (days × daily rate).</li>
+        </ul>
+        <p>This demonstrates tool-augmented reasoning: instead of relying only on natural language generation, the model delegates clear numeric tasks to deterministic tools.</p>
+    </div>
+
+    <div class="section">
+        <h2>Evaluation (LLM-as-a-Judge)</h2>
+        <p>A separate judge model (LLM-as-a-judge) evaluates the system on 8 test queries. For each query, it receives the user query, the system answer, and a gold reference answer, and returns 1–5 scores for:</p>
+        <ul>
+            <li><strong>Answer Correctness</strong></li>
+            <li><strong>Context Relevancy</strong></li>
+            <li><strong>Context Recall</strong></li>
+        </ul>
+        <p>The system achieves near-perfect scores across all metrics, indicating that:</p>
+        <ul>
+            <li>Routing between agents is appropriate (summary vs. needle).</li>
+            <li>The hierarchical RAG setup successfully retrieves the correct details, including subtle "needle" information such as the special deductible override and rental coverage terms.</li>
+            <li>The SummaryIndex supports robust high-level explanations of the timeline and financial outcome.</li>
+        </ul>
+        <p><strong>Results:</strong> Average Correctness: 4.625/5, Average Relevancy: 5.0/5, Average Recall: 4.625/5</p>
+    </div>
+
+    <div class="section">
+        <h2>MCP Usage in One Sentence</h2>
+        <p>In this system, MCP-style tools are used to extend the LLM beyond text-only reasoning by handling precise date and cost computations in a transparent, auditable way.</p>
+    </div>
+</body>
+</html>
