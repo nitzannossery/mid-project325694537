@@ -2,8 +2,17 @@
 
 A simple command-line task management application built with Python. This project demonstrates object-oriented programming, file I/O, JSON handling, and unit testing.
 
+## Components
+
+### 1. Task Manager Application
+A complete task management CLI application with persistent storage.
+
+### 2. Yahoo Finance Integration
+A script to fetch stock market data using the yfinance library.
+
 ## Features
 
+### Task Manager Features
 - ✅ Add new tasks with titles and descriptions
 - ✅ List all tasks or only pending tasks
 - ✅ Mark tasks as completed
@@ -13,12 +22,17 @@ A simple command-line task management application built with Python. This projec
 - ✅ Interactive CLI interface
 - ✅ Comprehensive unit tests
 
-## Installation
+### Yahoo Finance Features
+- ✅ Fetch current stock prices
+- ✅ Get market capitalization
+- ✅ Download historical data
+- ✅ Support for multiple stock tickers
 
-This project uses only Python standard library, so no additional dependencies are required.
+## Installation
 
 ### Requirements
 - Python 3.6 or higher
+- pip (Python package installer)
 
 ### Setup
 1. Clone this repository:
@@ -27,7 +41,16 @@ This project uses only Python standard library, so no additional dependencies ar
    cd mid-project325694537
    ```
 
-2. Run the application:
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Task Manager
+
+Run the application:
    ```bash
    python task_manager.py
    ```
@@ -70,6 +93,29 @@ Enter task description (optional): Finish math problems 1-10
 ✓ Task added: [✗] 1. Complete homework
 ```
 
+### Yahoo Finance
+
+Run the Yahoo Finance script:
+
+```bash
+python yahoo_finance.py
+```
+
+The script will:
+- Fetch Apple (AAPL) stock information including current price and market cap
+- Display historical price data for the last month
+- Download and display closing prices for Apple, Microsoft, and Google for the past year
+
+Example output:
+```
+150.25
+2450000000000
+                Open      High       Low     Close    Volume
+Date                                                         
+2024-12-20   148.50   151.20   147.80   150.25  50000000
+...
+```
+
 ## Testing
 
 Run the unit tests to verify the functionality:
@@ -98,9 +144,10 @@ The test suite includes:
 ```
 mid-project325694537/
 │
-├── task_manager.py       # Main application with Task and TaskManager classes
-├── test_task_manager.py  # Unit tests
-├── requirements.txt      # Project dependencies (none required)
+├── task_manager.py       # Main task management application
+├── test_task_manager.py  # Unit tests for task manager
+├── yahoo_finance.py      # Yahoo Finance stock data fetcher
+├── requirements.txt      # Project dependencies
 ├── README.md            # This file
 └── tasks.json           # Task storage (created automatically)
 ```
@@ -121,32 +168,37 @@ mid-project325694537/
 
 This project showcases several important programming concepts:
 
-1. **Object-Oriented Programming (OOP)**
+1. **Object-Oriented Programming (OOP)** - Task Manager
    - Classes and objects
    - Encapsulation
    - Type hints
 
-2. **File I/O**
+2. **File I/O** - Task Manager
    - Reading and writing JSON files
    - Error handling
 
-3. **Data Structures**
+3. **Data Structures** - Task Manager
    - Lists and dictionaries
    - Data serialization
 
-4. **Testing**
+4. **Testing** - Task Manager
    - Unit tests with unittest framework
    - Test fixtures and cleanup
    - Test coverage
 
-5. **User Interface**
+5. **User Interface** - Task Manager
    - Command-line interface
    - Input validation
    - User-friendly output
 
+6. **External APIs** - Yahoo Finance
+   - Working with third-party libraries (yfinance)
+   - Fetching real-time financial data
+   - Data visualization with pandas
+
 ## Future Enhancements
 
-Possible improvements for further development:
+### Task Manager
 - Add task priorities
 - Set due dates and reminders
 - Sort tasks by various criteria
@@ -154,6 +206,13 @@ Possible improvements for further development:
 - Add categories/tags
 - Search functionality
 - Task notes and comments
+
+### Yahoo Finance
+- Add more stock tickers
+- Create visualizations and charts
+- Calculate technical indicators
+- Set up price alerts
+- Portfolio tracking
 
 ## License
 

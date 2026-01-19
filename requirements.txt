@@ -1,7 +1,10 @@
-# No external dependencies required for this project
-# The project uses only Python standard library modules:
+# Task Manager dependencies
+# The Task Manager uses only Python standard library modules:
 # - json
 # - os
 # - datetime
 # - typing
 # - unittest
+
+# Yahoo Finance dependencies
+yfinance
